@@ -1,0 +1,64 @@
+﻿@model List<ApplicationCore.Models.BookingModel>
+
+
+
+<h3> Booking </h3>
+
+
+<div class="row clearfix">
+    <label style="font:800; font-size:medium">Booking FACTS</label>
+    <ul class="list-group list-group-flush">
+        @if (Model != null)
+        {
+            foreach (var Booking in Model)
+            {
+                <li class="list-group-item" style="border-color:black">
+                    <table>
+                        <tr>
+                            <th>Email</th>
+                            <th>BookingDate</th>
+                            <th>BookingTime</th>
+                            <th>PickupAddress</th>
+                            <th>PickupDate</th>
+                            <th>PickupTime</th>
+                            <th>FromPlaceName</th>
+                            <th>ToPlaceName</th>
+                            <th>CabTyeName</th>
+                            <th>ContactNo</th>
+                            <th>Landmark</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>@Booking.Email</td>
+                            <td>@Booking.BookingDate</td>
+                            <td>@Booking.BookingTime</td>
+                            <td>@Booking.PickupAddress</td>
+                            <td>@Booking.PickupDate</td>
+                            <td>@Booking.PickupTime</td>
+                            <td>@Booking.FromPlaceName</td>
+                            <td>@Booking.ToPlaceName</td>
+                            <td>@Booking.CabTyeName</td>
+                            <td>@Booking.ContactNo</td>
+                            <td>@Booking.Landmark</td>
+                            <td>@Booking.Status</td>
+                            <td>
+                                <a class="btn btn-primary" asp-controller="Bookings" asp-action="DeleteBooking" asp-route-bId="@Booking.id">Delete</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" asp-controller="Bookings" asp-action="UpdateOneBooking" asp-route-bId="@Booking.id">Update</a>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            }
+        }
+        else
+        {
+            Html.Display("No Booking So Far");
+        }
+    </ul>
+</div>
+
+<a class="btn btn-primary" asp-controller="Bookings" asp-action="AddOneBooking">
+    AddBooking
+</a>

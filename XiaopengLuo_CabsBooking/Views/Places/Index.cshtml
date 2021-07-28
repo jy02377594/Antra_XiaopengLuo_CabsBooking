@@ -1,0 +1,32 @@
+﻿@model List<ApplicationCore.Models.PlacesModel>
+
+
+
+<h3> Place </h3>
+
+
+<div class="row clearfix">
+    <label style="font:800; font-size:medium">PLACE FACTS</label>
+    <ul class="list-group list-group-flush">
+        @if (Model != null)
+        {
+            foreach (var place in Model)
+            {
+                <li class="list-group-item" style="border-color:black">
+                    @place.PlaceName
+                    <a class="btn btn-primary" asp-controller="Places" asp-action="DeletePlace" asp-route-pId="@place.PlaceId">Delete</a>
+                    <a class="btn btn-primary" asp-controller="Places" asp-action="UpdateOnePlace" asp-route-pId="@place.PlaceId">Update</a>
+                </li>
+            }
+        }
+        else
+        {
+
+            Html.Display("No Place So Far");
+        }
+    </ul>
+</div>
+
+<a class="btn btn-primary" asp-controller="Places" asp-action="AddOnePlace">
+    AddPlace
+</a>

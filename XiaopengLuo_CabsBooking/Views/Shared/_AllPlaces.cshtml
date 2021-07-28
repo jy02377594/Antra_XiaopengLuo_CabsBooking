@@ -1,0 +1,8 @@
+﻿@using ApplicationCore.ServiceInterfaces
+
+@inject IPlaceService _placeService
+
+@foreach (var place in await _placeService.GetAllPlaces())
+{ 
+    <a class="dropdown-item" id="@place.PlaceId">@place.PlaceName</a>
+}

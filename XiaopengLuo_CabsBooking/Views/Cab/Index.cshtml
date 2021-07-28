@@ -1,0 +1,31 @@
+﻿@model List<ApplicationCore.Models.CabModel>
+
+
+
+<h3> Cab </h3>
+
+
+<div class="row clearfix">
+    <label style="font:800; font-size:medium">CAB FACTS</label>
+    <ul class="list-group list-group-flush">
+        @if (Model != null)
+        {
+            foreach (var cab in Model)
+            {
+                  <li class="list-group-item" style="border-color:black">
+                      @cab.CabTypeName
+                      <a class="btn btn-primary" asp-controller="Cab" asp-action="DeleteCab" asp-route-cId="@cab.CabTypeId">Delete</a>
+                      <a class="btn btn-primary" asp-controller="Cab" asp-action="UpdateOneCab" asp-route-cId="@cab.CabTypeId">Update</a>
+                  </li>
+             }
+         }
+         else
+         {
+             Html.Display("No Cab So Far");
+         }
+            </ul>
+</div>
+
+<a class="btn btn-primary" asp-controller="Cab" asp-action="AddOneCab">
+    AddCab
+    </a>

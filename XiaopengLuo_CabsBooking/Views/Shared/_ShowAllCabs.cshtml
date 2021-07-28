@@ -1,0 +1,19 @@
+﻿@model List<ApplicationCore.Models.CabModel>;
+
+
+<a asp-controller="Cab" asp-action="GetAllCabs"></a>
+<ul class="list-group list-group-flush">
+    @if (Model != null)
+    {
+        foreach (var cab in Model)
+        {
+            <li class="list-group-item" style="border-color:black">
+                @cab.CabTypeName;
+            </li>
+        }
+    }
+    else {
+
+        Html.Display("No Cab So Far");
+    }
+</ul>

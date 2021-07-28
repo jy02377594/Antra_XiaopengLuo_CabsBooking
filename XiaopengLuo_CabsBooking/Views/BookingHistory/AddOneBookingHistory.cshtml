@@ -1,0 +1,90 @@
+﻿@model ApplicationCore.Models.BookingHistoryRequestDto
+
+@using ApplicationCore.ServiceInterfaces
+
+@inject ICabService cabService
+
+<div class="row">
+
+    <form asp-action="AddBookingHistory">
+        @*Show Validation Info*@
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" class="form-control">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BookingDate">BookingDate</label>
+            <input asp-for="BookingDate" class="form-control">
+            <span asp-validation-for="BookingDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BookingTime">BookingTime</label>
+            <input asp-for="BookingTime" class="form-control">
+            <span asp-validation-for="BookingTime" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PickupAddress">PickupAddress</label>
+            <input asp-for="PickupAddress" class="form-control">
+            <span asp-validation-for="PickupAddress" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CabTypeId">CabTypeId</label>
+            <input asp-for="CabTypeId" class="form-control">
+            <span asp-validation-for="CabTypeId" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ContactNo">ContactNo</label>
+            <input asp-for="ContactNo" class="form-control">
+            <span asp-validation-for="ContactNo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="FromPlace">FromPlace</label>
+            <input asp-for="FromPlace" class="form-control">
+            <span asp-validation-for="FromPlace" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ToPlace">ToPlace</label>
+            <input asp-for="ToPlace" class="form-control">
+            <span asp-validation-for="ToPlace" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Landmark">Landmark</label>
+            <input asp-for="Landmark" class="form-control">
+            <span asp-validation-for="Landmark" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PickupDate">PickupDate</label>
+            <input asp-for="PickupDate" class="form-control">
+            <span asp-validation-for="PickupDate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PickupTime">PickupTime</label>
+            <input asp-for="PickupTime" class="form-control">
+            <span asp-validation-for="PickupTime" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Status">Status</label>
+            <input asp-for="Status" class="form-control">
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Comp_time">Comp_time</label>
+            <input asp-for="Comp_time" class="form-control">
+            <span asp-validation-for="Comp_time" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Charge">Charge</label>
+            <input asp-for="Charge" class="form-control">
+            <span asp-validation-for="Charge" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Feedback">Feedback</label>
+            <input asp-for="Feedback" class="form-control">
+            <span asp-validation-for="Feedback" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">AddOneBookingHistory</button>
+    </form>
+</div>

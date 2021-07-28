@@ -1,0 +1,15 @@
+﻿@model ApplicationCore.Models.CabAddModel
+<div class="row">
+
+    <form asp-action="AddCab">
+        @*Show Validation Info*@
+        <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="CabTypeName">CabTypeName</label>
+                <input asp-for="CabTypeName" class="form-control">
+                <span asp-validation-for="CabTypeName" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">AddOneCab</button>
+    </form>
+</div>

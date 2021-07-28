@@ -1,0 +1,69 @@
+﻿@model List<ApplicationCore.Models.BookingHistoryModel>
+
+
+<h3> BookingHistory </h3>
+
+
+<div class="row clearfix">
+    <label style="font:800; font-size:medium">BookingHistory FACTS</label>
+    <ul class="list-group list-group-flush">
+        @if (Model != null)
+        {
+            foreach (var BookingHistory in Model)
+            {
+                <li class="list-group-item" style="border-color:black">
+                    <table>
+                        <tr>
+                            <th>Email</th>
+                            <th>BookingDate</th>
+                            <th>BookingTime</th>
+                            <th>PickupAddress</th>
+                            <th>PickupDate</th>
+                            <th>PickupTime</th>
+                            <th>FromPlaceName</th>
+                            <th>ToPlaceName</th>
+                            <th>CabTyeName</th>
+                            <th>ContactNo</th>
+                            <th>Landmark</th>
+                            <th>Status</th>
+                            <th>Comp_time</th>
+                            <th>Charge</th>
+                            <th>Feedback</th>
+                        </tr>
+                        <tr>
+                            <td>@BookingHistory.Email</td>
+                            <td>@BookingHistory.BookingDate</td>
+                            <td>@BookingHistory.BookingTime</td>
+                            <td>@BookingHistory.PickupAddress</td>
+                            <td>@BookingHistory.PickupDate</td>
+                            <td>@BookingHistory.PickupTime</td>
+                            <td>@BookingHistory.FromPlaceName</td>
+                            <td>@BookingHistory.ToPlaceName</td>
+                            <td>@BookingHistory.CabName</td>
+                            <td>@BookingHistory.ContactNo</td>
+                            <td>@BookingHistory.Landmark</td>
+                            <td>@BookingHistory.Status</td>
+                            <td>@BookingHistory.Comp_time</td>
+                            <td>@BookingHistory.Charge</td>
+                            <td>@BookingHistory.Feedback</td>
+                            <td>
+                                <a class="btn btn-primary" asp-controller="BookingHistory" asp-action="DeleteBookingHistory" asp-route-bhId="@BookingHistory.id">Delete</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" asp-controller="BookingHistory" asp-action="UpdateOneBookingHistory" asp-route-bhId="@BookingHistory.id">Update</a>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+            }
+        }
+        else
+        {
+            Html.Display("No BookingHistory So Far");
+        }
+    </ul>
+</div>
+
+<a class="btn btn-primary" asp-controller="BookingHistory" asp-action="AddOneBookingHistory">
+    AddBookingHistory
+</a>

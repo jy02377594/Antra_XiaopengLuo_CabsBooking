@@ -1,0 +1,8 @@
+﻿@using ApplicationCore.ServiceInterfaces
+
+@inject ICabService cabService
+
+@foreach (var cab in await cabService.GetAllCabs())
+{ 
+    <button type="button" class="dropdown-item" id="@cab.CabTypeId">@cab.CabTypeName.</button>
+}
