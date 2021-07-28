@@ -122,7 +122,10 @@ namespace Infrastracture.Services
                 Landmark = booking.Landmark,
                 PickupDate = booking.PickupDate,
                 PickupTime = booking.PickupTime,
-                Status = booking.Status
+                Status = booking.Status,
+                Charge = booking.Charge,
+                Comp_time = booking.Comp_time,
+                Feedback = booking.Feedback
             };
 
             _bookingHistoryRepository.UpdateBookingHistory(entity);
